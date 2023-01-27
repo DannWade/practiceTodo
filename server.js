@@ -37,3 +37,12 @@ app.post('/addTodo',(req,res)=>{
 app.listen(process.env.PORT || PORT,()=>{
     console.log(`Server running on port ${PORT}`)
 })
+
+app.delete('/deleteItem',(req,res)=>{
+    db.collection('todos').deleteOne({thing:req.body.itemFromJS})
+    .then(result=>{
+        console.log('Todo deleted')
+        res.json('todo deleted')
+    })
+    .catch(error=>console.error(error))
+})

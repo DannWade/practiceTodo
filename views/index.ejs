@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/6b8a3dd54a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Todo List</h1>
     <ul class="todoItems">
         <%for(let i =0;i<items.length;i++){%>
-            <li class="todoItems">
+            <li class="item">
                 <%if(items.completed == true){%>
-                    <span class="'completed"><%=items[i].thing%></span>
+                    <span class="completed"><%=items[i].thing%></span>
                 <%}else{%>
                     <span><%=items[i].thing%></span>
                 <%}%>
+                <span class="fa fa-trash"></span>
             </li>
         <%}%>
     </ul>
