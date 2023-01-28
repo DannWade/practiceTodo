@@ -12,7 +12,7 @@ Array.from(item).forEach((element)=>{
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click',markUncomplete)
-// })
+// })/
 
 async function deleteItem(){
     const itemText = this.parentNode.childNodes[1].innerText
