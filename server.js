@@ -46,3 +46,19 @@ app.delete('/deleteItem',(req,res)=>{
     })
     .catch(error=>console.error(error))
 })
+
+app.put('/markComplete',(req,res)=>{
+    db.collection('todos').updateOne({thing:req.body.itemFromJS},{
+        $set:{
+            completed:true
+        }
+    },{
+        sort:{_id:-1},
+        upsert:false
+    })
+    .then(result=>{
+        console.log('Mark Complete')
+        res.json('Marked Complete')
+    })
+    .catch(error=>console.error(error))
+})
